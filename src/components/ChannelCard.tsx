@@ -11,8 +11,22 @@ const ChannelCard = ({ channelData }: channelCardProps) => {
   const { snippet } = channelData;
 
   return (
-    <Box sx={{ boxShadow: "none", borderRadius: 20 }}>
-      <Link to="#" style={{ textDecoration: "none" }}>
+    <Box
+      sx={{
+        boxShadow: "none",
+        borderRadius: "20px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: { md: "390px", xs: "420px" },
+        height: "206px",
+        margin: "auto",
+      }}
+    >
+      <Link
+        to={`/channel/${channelData.id.channelId}`}
+        style={{ textDecoration: "none" }}
+      >
         <CardContent
           sx={{
             display: "flex",

@@ -1,6 +1,5 @@
 import EmergencyRecordingSharp from "@mui/icons-material/EmergencyRecordingSharp";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
   Toolbar,
@@ -10,7 +9,6 @@ import {
   Badge,
   Avatar,
 } from "@mui/material";
-import React from "react";
 import { Link } from "react-router-dom";
 import { logo } from "../constants";
 import SearchBar from "./SearchBar";
@@ -20,7 +18,7 @@ const Navbar = () => {
     <AppBar position="static" elevation={0}>
       <Toolbar sx={{ padding: "15px 0px" }}>
         <Box display={"flex"} gap="5px">
-          <Link to="/">
+          <Link to="/New">
             <img alt="logo" src={logo} width={50} height={50} />
           </Link>
         </Box>

@@ -1,10 +1,9 @@
 import { ComponentType, lazy, Suspense } from "react";
-import { Outlet, createBrowserRouter } from "react-router-dom";
+import { Outlet, createBrowserRouter, Navigate } from "react-router-dom";
 import Loading from "../components/Loading";
 import { Grid } from "@mui/material";
 import { Navbar, Sidebar } from "../components";
 import videoApi from "../api/videoApi";
-import Protect from "../components/Protect";
 
 const AuthLayout = () => {
   return (
@@ -42,6 +41,13 @@ const Loadable = (Component: ComponentType) => (props: any) => {
 
 const HomePage = Loadable(lazy(() => import("../components/Feed")));
 const NotFoundPage = Loadable(lazy(() => import("../components/NotFound")));
+const ChannelDetailPage = Loadable(
+  lazy(() => import("../components/ChannelDetail"))
+);
+const VideoDetailPage = Loadable(
+  lazy(() => import("../components/VideoDetail"))
+);
+const SearchFeedPage = Loadable(lazy(() => import("../components/SearchFeed")));
 
 export default createBrowserRouter([
   {
@@ -49,12 +55,54 @@ export default createBrowserRouter([
     errorElement: <NotFoundPage />,
     children: [
       {
+        index: true,
+        element: <Navigate to="/New" />,
+      },
+      {
         path: "/:type",
         element: <HomePage />,
         loader: async ({ params }) => {
           const res = await videoApi.searchVideo({
             q: params.type as string,
           });
+          return res.data;
+        },
+      },
+      {
+        path: "/channel/:channelId",
+        element: <ChannelDetailPage />,
+        loader: async ({ params }) => {
+          const res = await videoApi.getChannelDetail({
+            id: params.channelId as string,
+          });
+          const channelVideo = await videoApi.searchVideo({
+            channelId: params.channelId,
+          });
+
+          return { channelInfor: res.data, channelVideo: channelVideo.data };
+        },
+      },
+      {
+        path: "/video/:videoId",
+        element: <VideoDetailPage />,
+        loader: async ({ params }) => {
+          const res = await videoApi.getVideoDetail({
+            id: params.videoId as string,
+          });
+
+          const playlist = await videoApi.searchVideo({ q: "New" });
+
+          return { searchList: res.data, playlist: playlist.data };
+        },
+      },
+      {
+        path: "/search/:key",
+        element: <SearchFeedPage />,
+        loader: async ({ params }) => {
+          const res = await videoApi.searchVideo({
+            q: params.key as string,
+          });
+
           return res.data;
         },
       },

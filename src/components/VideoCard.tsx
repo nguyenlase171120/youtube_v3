@@ -14,7 +14,10 @@ const VideoCard = ({ videoData }: videoCardProps) => {
   } = videoData;
 
   return (
-    <Card elevation={0} sx={{ width: { md: "380px", sx: "100%" } }}>
+    <Card
+      elevation={0}
+      sx={{ width: { md: "380px", sx: "100%" }, borderRadius: "5px" }}
+    >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
         <CardMedia
           title={snippet.title}

@@ -1,7 +1,14 @@
-import React from "react";
+import { useLoaderData } from "react-router-dom";
+import { Videos } from ".";
 
 const SearchFeed = () => {
-  return <div>SearchFeed</div>;
+  const { items } = useLoaderData() as any;
+
+  return (
+    <div>
+      <Videos video={items} />
+    </div>
+  );
 };
 
 export default SearchFeed;

@@ -1,9 +1,11 @@
 import { IconButton, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { categories } from "../constants";
+import { useState } from "react";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const [selected, setSelected] = useState<string>("New");
 
   return (
     <Stack
@@ -16,12 +18,18 @@ const Sidebar = () => {
         flexDirection: { md: "column" },
       }}
     >
-      {categories.map((item) => {
+      {categories.map((item: any) => {
         return (
           <button
             className="sidebar-item"
             key={item.name}
-            onClick={() => navigate(item.name)}
+            style={{
+              backgroundColor: selected === item.name ? "#F0EEED" : "#fff",
+            }}
+            onClick={() => {
+              setSelected(item.name);
+              navigate(item.name);
+            }}
           >
             <IconButton>{item.icon}</IconButton>
             <Typography

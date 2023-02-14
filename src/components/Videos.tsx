@@ -4,15 +4,16 @@ import VideoCard from "./VideoCard";
 
 type IVideosProps = {
   video: any;
+  direction?: any;
 };
 
-const Video = ({ video }: IVideosProps) => {
+const Video = ({ video, direction = "row" }: IVideosProps) => {
   return (
     <Stack
-      flexDirection={"row"}
+      flexDirection={direction}
       flexWrap={"wrap"}
       gap={2}
-      justifyContent={"start"}
+      justifyContent={"center"}
     >
       {video.map((item: any) => {
         return (

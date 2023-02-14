@@ -5,7 +5,6 @@ import { Box } from "@mui/material";
 const Feed = () => {
   const videos: any = useLoaderData();
 
-  // console.log(videos);
   return (
     <Box padding={2}>
       {" "}
