@@ -11,6 +11,15 @@ import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
+import NightlightIcon from "@mui/icons-material/Nightlight";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import LanguageIcon from "@mui/icons-material/Language";
+import TranslateIcon from "@mui/icons-material/Translate";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import SettingsIcon from "@mui/icons-material/Settings";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
+import KeyboardAltOutlinedIcon from "@mui/icons-material/KeyboardAltOutlined";
 
 export const logo = "https://i.ibb.co/s9Qys2j/logo.png";
 export const categories = [
@@ -41,3 +50,54 @@ export const demoVideoTitle =
   "Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI";
 export const demoProfilePicture =
   "http://dergipark.org.tr/assets/app/images/buddy_sample.png";
+
+export const listMenuCommon = [
+  {
+    group: [
+      {
+        firstIcon: <NightlightIcon fontSize="small" />,
+        text: "Appearance: Device theme",
+        secondIcon: <ArrowForwardIosIcon fontSize="small" />,
+      },
+      {
+        firstIcon: <TranslateIcon fontSize="small" />,
+        text: "Language: British English",
+        secondIcon: <ArrowForwardIosIcon fontSize="small" />,
+      },
+      {
+        firstIcon: <AdminPanelSettingsIcon fontSize="small" />,
+        text: "Restricted mode: Off",
+        secondIcon: <ArrowForwardIosIcon fontSize="small" />,
+      },
+      {
+        firstIcon: <LanguageIcon fontSize="small" />,
+        text: "Location: Vietnam",
+        secondIcon: <ArrowForwardIosIcon fontSize="small" />,
+      },
+      {
+        firstIcon: <KeyboardAltOutlinedIcon fontSize="small" />,
+        text: "Keyboard shortcut",
+      },
+    ],
+  },
+  {
+    group: [
+      {
+        firstIcon: <SettingsIcon fontSize="small" />,
+        text: "Settings",
+      },
+    ],
+  },
+  {
+    group: [
+      {
+        firstIcon: <HelpOutlineIcon fontSize="small" />,
+        text: "Help",
+      },
+      {
+        firstIcon: <FeedbackOutlinedIcon fontSize="small" />,
+        text: "Send Feedback",
+      },
+    ],
+  },
+];

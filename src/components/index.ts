@@ -1,4 +1,4 @@
-export { default as Navbar } from "./Navbar";
+export { default as Navbar } from "./navbar/Navbar";
 export { default as ChannelDetail } from "./ChannelDetail";
 export { default as Sidebar } from "./Sidebar";
 export { default as SearchBar } from "./SearchBar";
