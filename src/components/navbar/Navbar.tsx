@@ -6,7 +6,7 @@ import { logo } from "../../constants";
 import { auth } from "../../firebase";
 import SearchBar from "../SearchBar";
 import AuthentUser from "./AuthentUser";
-import UnAuthentUser from "./unAuthentUser";
+import UnAuthentUser from "./Unauthentuser";
 
 const Navbar = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);

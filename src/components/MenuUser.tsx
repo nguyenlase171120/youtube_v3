@@ -86,7 +86,7 @@ const MenuUser = ({ anchor, handleClose, isAuthen = false }: MenuProps) => {
       {finalList.map((item) => {
         return (
           <div>
-            {item.group.map((groupItem) => {
+            {item.group.map((groupItem: any) => {
               return (
                 <MenuItem
                   disableRipple
